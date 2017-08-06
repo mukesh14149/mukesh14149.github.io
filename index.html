@@ -1,22 +1,76 @@
-# What is the project about?
-This project is about to provide the general purpose environment that allows biologists and other
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Active Segmentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Active Segmentation</h1>
+        <h2 class="project-tagline">Active Segmentation Plugin for ImageJ - GSOC 2016</h2>
+      <a href="https://github.com/mukesh14149/GOOGLESUMMERCODE2016" class="btn">View on GitHub</a>
+      <a href="https://github.com/mukesh14149/GOOGLESUMMERCODE2016/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mukesh14149/GOOGLESUMMERCODE2016/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+	<h1>
+<a id="developers" class="anchor" href="#developers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developers</h1>
+
+<p>Student: <a href="mukesh14149@iiitd.ac.in">Mukesh Gupta</a><br>
+Mentor: <a href="dimiterpp@gmail.com">Dimiter Prodanov </a> <a href="sumit.3203@gmail.com">Sumit Kumar Vohra</a><br>
+<h1>
+<a id="organization" class="anchor" href="#organization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Organization:</h1>
+
+<p><a href="http://incf.org">International Neuroinformatics Coordinating Facility</a>   </p>
+
+<h1>
+<a id="project-description" class="anchor" href="#project-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project description</h1>
+
+<p>This project is about to provide the general purpose environment that allows biologists and other
 domain experts to use transparently state-of-the-art techniques in machine learning to improve
-their image segmentation results.
+their image segmentation results.<br>
 ImageJ is a public domain Java image processing program extensively used in life sciences.
 Active Segmentation plugin is the redesign of existing Trainable Weka Segmentation (TWS) of
 ImageJ. The main functionality of the platform was already developed in the context of GSOC
 2016 but the platform is still under development. In last Google summer of code, the major
 focus was on integrating generic filter families and specifically on one family of filters i.e.
 Gaussian Scale Space.
-The Active Segmentation provides generic functionality and user friendly interface so that the
-user can include the state of the art filters and machine learning frameworks from the WEKA
-library:
-* Active learning.
-* Multi-instance learning designed by third party in a robust manner
-
-In this Google summer of code we need to expand the existing functionality of the Active
-Segmentation plugin. The Generic framework can be used for segmentation, classification and
-object detection but in last Google summer of code the Segmentation has been completed, we
+The Active Segmentation provides generic functionality and user friendly interface so that the user can include the state of the art filters and 
+machine learning frameworks from the WEKA library:
+<ul>
+<li>Active learning.</li>
+<li>Multi-instance learning designed by third party in a robust manner </li>
+</ul>
+In this Google summer of code we need to expand the existing functionality of the Active Segmentation plugin. The Generic framework can be used for segmentation, classification and object detection but in last Google summer of code the Segmentation has been completed, we
 need to extend this platform to provide functionality like classification and object detection
+</p>
+
+<h1>
+<a id="Filter-Framework" class="anchor" href="#Filter-Framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Framework</h1>
+<p>Filter Framework is responsible for automatic loading of filters.It automatically finds all JAR 
+  files in the path and first level of subdirectories and those have implemented "IFilter" interface. 
+ </p>
+<p>Showing Zernike filter<img src="images/FilterScreen.png"> </p>
 
 
+<h1>
+<a id="Feature-Screen" class="anchor" href="#Feature-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature Screen</h1>
+<p>Feature Screen of the active segmentation is very similar to the TWS(Trainable Weka Segmentation). It will start with two classes i.e 
+Binary Classification   
+</p>
+
+<p>This screen showing the Class level pixel classification</p><br>
+<p>User selects images which can be used for training purpose.<img src="images/FeatureClassTrainingScreen.png"></p>
+<p>User selects images which can be used for testing purpose.<img src="images/FeatureClassTestingScreen.png"></p>
+  
+    
+    </section>
+  
+  </body>
+</html>
