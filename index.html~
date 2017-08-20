@@ -79,7 +79,7 @@ Binary Classification
 <p>This screen showing the Class level pixel classification</p><br>
 <p>User selects images which can be used for training purpose.<img src="images/FeatureClassTrainingScreen.png"></p>
 <p>User selects images which can be used for testing purpose.<img src="images/FeatureClassTestingScreen.png"></p>
-<p>Classification Result would be show on top of the image.<img src="images/Classification_result.png"></p>  
+  
     
     </section>
   
