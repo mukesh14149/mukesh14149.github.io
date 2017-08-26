@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
   </head>
   <body>
     <section class="page-header">
@@ -47,15 +48,33 @@ machine learning frameworks from the WEKA library:
 <li>Active learning.</li>
 <li>Multi-instance learning designed by third party in a robust manner </li>
 </ul>
-In this Google summer of code we need to expand the existing functionality of the Active Segmentation plugin. The Generic framework can be used for segmentation and classification but in last Google summer of code the Segmentation has been completed, we
-need to extend this platform to provide functionality like classification.
+In this Google summer of code we expanded the existing functionality of the Active Segmentation plugin. Earlier this tool only used for Segmentation, now functionality has been extended to classification of the images. We used Zernike Moments as a feature vector so we extracted zernike moments from the images and then used these features to train our SVM classifier to classify images.
+<br>Zernike moments is the set of orthogonal Zernike polynomials defined over the polar coordinate space inside a unit circle. The two-dimensional Zernike moments of order p with repetition q of an image intensity function \[ f(r, \theta)\] are defined as
+ <div style="font-size: 100%;">    
+\[
+
+  			Z_{pq}= \frac{p+1}{\pi} \int_{0}^{1} \int_{-\pi}^{+\pi} V_{pq}(r,\theta)rdrd\theta,\; |r| \le 1
+
+\]    
+<br>where p order Zernike polynomials are defined as 
+\[ V_{pq}(r, \theta) = R_{pq}(r)e^{-jq\theta},\; j=\sqrt{-1} \]
+<br>and the real-valued radial polynomials defined as
+\[ R_{pq} = \sum_{k=0}^\frac{p-|q|}{2} (-1)^2 \frac{(p-k)!}{k!(\frac{p+|q|}{2}-k)!(\frac{p-|q|}{2}-k)!}r^{p-2k}\]
+<br>where \[0\le|q|\le p,\; p-|q|\; is\;even,\; p\ge0\]
+<br>It can be seen from the above formulae that Computation of Zernike radial polynomials will takes too much time when order goes high, so we have decided to use other recursive formula to compute Zernike radial polynomials
+\[R_p^q(r) = r[R_{p-1}^{|q-1|}(r)+R_{p-1}^{q+1}(r)]-R_{p-2}^q(r)\]
+<br>This Formulae has been taken from this <a href="http://neuroinformatics.be/wp-content/uploads/2017/03/Barmak2013_zernike1.pdf">paper</p>
+</div> 
+<iframe width="650" height="400"
+src="https://www.youtube.com/embed/sVdp81GCrSo">
+</iframe> 
 </p>
 
 <h1>
 
 
 <a id="Filter-Framework" class="anchor" href="#Filter-Framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Framework</h1>
-<p>Filter Framework is responsible for automatic loading of filters.It automatically finds all JAR 
+<p>Filter Framework is responsible for automatic loading of filters. It automatically finds all JAR 
   files in the path and first level of subdirectories and those have implemented "IFilter" interface. 
  </p>
 <p>Active Segmentation Filters Screen<img src="images/FilterScreen1.png"><img src="images/FilterScreen.png"> </p>
@@ -81,7 +100,7 @@ Binary Classification
 <p>User selects images which can be used for testing purpose.<img src="images/FeatureClassTestingScreen.png"></p>
 <p>Classification Result would be show on top of the image.<img src="images/Classification_result.png"></p>  
 
-<a href="https://github.com/mukesh14149/GOOGLESUMMERCODE2016/issues"> Link to Bug list</a>
+<h2><a href="https://github.com/mukesh14149/GOOGLESUMMERCODE2016/issues"> Link to Bug list</a></h2>
     
     </section>
   
